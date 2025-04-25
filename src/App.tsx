@@ -5,18 +5,20 @@ import "./index.css";
 function App() {
   return (
     <>
-      <div className="bg-blue-50 h-screen">
-        <header className="text-center ">
-          <div className="pb-3">
-            <h1 className="text-4xl font-bold text-center ">
-              Welcome to <span className="text-blue-700">Yoo Shop</span>
-            </h1>
-          </div>
-          <p>Discover our amazing collection of high-quality products.</p>
-          <p>From electronics to fashion, we have something for everyone!</p>
-        </header>
-        
+      <div className="App">
+        <h1>Welcome to React</h1>
+        <p>To get started, edit <code>src/App.tsx</code> and save to reload.</p>
+        <a href="https://vitejs.dev" target="_blank">
+          Vite Docs
+        </a>
+        <a href="https://reactjs.org" target="_blank">
+          React Docs
+        </a>
       </div>
+      <div className="container">
+        <div className="card">
+          <h2>Get started by editing <code>src/App.tsx</code></h2>
+          <p>Click on the links to learn more about Vite and React.</p>
     </>
   );
 }
