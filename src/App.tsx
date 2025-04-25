@@ -115,7 +115,7 @@ function App() {
             </button>
           </div>
         </div>
-        <div className="flex justify-center items-center mt-20">
+        <div className="flex justify-between p-5 items-center mt-20 ">
           <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <svg
               className="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3"
