@@ -1,19 +1,15 @@
 import "./index.css";
 import "flowbite";
-import { BrowserRouter , Routes , Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-
-import Home from "./Home";
+import Home from "./Features/Home/Home";
 import Layout from "./Layout";
-import Shop from "./Shop";
-import DataProvider from "./DataContext";
+import Shop from "./Features/shop/Shop";
+import DataProvider from "./context/DataContext";
 
 function App() {
   return (
     <>
-
-    
       <DataProvider>
         <BrowserRouter>
           <Routes>
@@ -24,7 +20,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </DataProvider>
-     
     </>
   );
 }

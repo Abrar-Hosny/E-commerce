@@ -1,13 +1,12 @@
 import useEffect, { use, useCallback } from "react";
 import { Rating } from "flowbite-react";
-import {DataContext}    from "./DataContext";
+import { DataContext } from "../../context/DataContext";
 import { useContext } from "react";
 
-
 export default function Shop() {
- const {products} = useContext(DataContext);
- console.log(products);
-// 
+  const { products } = useContext(DataContext);
+  console.log(products);
+  //
   return (
     <>
       <div className="text-center">
@@ -45,7 +44,6 @@ export default function Shop() {
             </div>
           ))}
         </div>
-        
       </div>
     </>
   );
