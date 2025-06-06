@@ -1,7 +1,10 @@
-import React from "react";
+import useEffect from "react";
 import { Rating } from "flowbite-react";
 
 export default function Shop() {
+
+ 
+
   return (
     <>
       <div className="text-center">
@@ -29,6 +32,7 @@ export default function Shop() {
         Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
       </h5>
     </a>
+
 
     <div className="mt-2 flex items-center justify-between">
       <span className="text-xl font-bold text-gray-900 dark:text-white">
