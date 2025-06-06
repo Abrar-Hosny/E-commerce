@@ -7,22 +7,23 @@ import { BrowserRouter , Routes , Route } from "react-router-dom";
 import Home from "./Home";
 import Layout from "./Layout";
 import Shop from "./Shop";
+import DataProvider from "./DataContext";
 
 function App() {
   return (
     <>
-  <BrowserRouter>
-  <Routes>
-<Route path="/"  element={<Layout/>}>
-<Route index element={<Home/>} />
-<Route path="/shop" element={<Shop/>} />
 
-
-</Route>
-  
-  </Routes>
-  
-  </BrowserRouter>
+    
+      <DataProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </DataProvider>
      
     </>
   );
