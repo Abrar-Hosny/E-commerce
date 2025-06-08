@@ -1,4 +1,3 @@
-import { useEffect, useCallback } from "react";
 import { Rating } from "flowbite-react";
 import { DataContext } from "../../context/DataContext";
 import { useContext } from "react";
