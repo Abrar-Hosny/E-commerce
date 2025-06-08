@@ -1,4 +1,4 @@
-import useEffect, { use, useCallback } from "react";
+import { useEffect, useCallback } from "react";
 import { Rating } from "flowbite-react";
 import { DataContext } from "../../context/DataContext";
 import { useContext } from "react";
@@ -6,7 +6,7 @@ import { useContext } from "react";
 export default function Shop() {
   const { products } = useContext(DataContext);
   console.log(products);
-  //
+
   return (
     <>
       <div className="text-center">
@@ -18,28 +18,48 @@ export default function Shop() {
       </div>
 
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 mb-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8 mb-8 px-4">
           {products.map((product) => (
             <div
               key={product.id}
-              className="max-w-sm rounded overflow-hidden shadow-lg bg-white"
+              className="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <img
-                className="w-full h-48 object-cover"
-                src={product.image}
-                alt={product.title}
-              />
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{product.title}</div>
-                <p className="text-gray-700 text-base">{product.description}</p>
-                <Rating
-                  className="mt-2"
-                  value={Math.round(product.rating.rate)}
-                  readOnly
+              <div className="relative overflow-hidden bg-gray-50 flex items-center justify-center">
+                <img
+                  className="w-full h-72 object-contain p-4 transition-transform duration-300 ease-in-out hover:scale-105"
+                  src={product.image}
+                  alt={product.title}
+                  loading="lazy"
+                  style={{
+                    imageRendering: "high-quality",
+                  }}
                 />
-                <p className="text-gray-900 font-bold text-xl mt-2">
-                  ${product.price}
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg mb-3 text-gray-800 leading-tight min-h-[3rem]">
+                  {product.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  {product.description.slice(0, 100)}...
                 </p>
+                <div className="flex items-center gap-2 mb-4">
+                  <Rating
+                    value={Math.round(product.rating.rate)}
+                    readOnly
+                    size="sm"
+                  />
+                  <span className="text-xs text-gray-500">
+                    ({product.rating.count})
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="text-2xl font-bold text-indigo-600">
+                    ${product.price}
+                  </p>
+                  <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             </div>
           ))}
